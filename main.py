@@ -25,4 +25,5 @@ def playTetris(graphicsON = False, speed = 100 , player = None):
     
     return score
 
-playTetris(True, 35)
+
+playTetris(True, 35, None)

@@ -9,7 +9,7 @@ import pygame
 import constant
 import time
 
-modelFile = "D:\\DevPython\\tetrisIA\\best8487.keras"
+modelFile = ".\\best285.keras"
 model = load_model(modelFile)
 
 state_size = 5
@@ -35,7 +35,6 @@ display = pygame.display.set_mode((constant.SCREEN_WIDTH, constant.SCREEN_HEIGHT
 
 while not done:
             
-            
     for event in pygame.event.get():                #pour empêcher pygame de crash
         if event.type == pygame.QUIT:
             env.running = False
@@ -44,9 +43,6 @@ while not done:
     # state -> action
     next_states = {tuple(v):k for k, v in env.get_next_states().items()}
     the_best_state = best_state(next_states.keys())
-    best_action = next_states[the_best_state]
-    
+    best_action = next_states[the_best_state]       
     #print("meilleure état choisi, lines, holes, total_bumpiness, sum_height : ", best_state)
-    
-
     reward, done = env.play(best_action[0], best_action[1], render=True, display=display)
