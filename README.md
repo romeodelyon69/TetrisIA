@@ -15,3 +15,8 @@ For the training, the idea is to explore random move while playing more and more
 height of the highest tower, the gaps between consecutive columns and son one to predict a score for a given grid. 
 
 Because it plays less and less randomly you should see the maximum socre rapidly increase when reaching 2000 epochs (the moment the model completly stops to explore random branches). 
+
+
+## Note on the version of keras and tensorflow
+
+You should use tensorflow==2.10 and keras==2.10
